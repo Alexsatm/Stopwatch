@@ -13,6 +13,12 @@ const stopwatch = () => {
             hours++
         }
     }
+
+    let h = hours < 10 ? '0' + hours : hours;
+    let m = min < 10 ? '0' + min : min;
+    let s = sec < 10 ? '0' + sec : sec;
+
+    displayTime.innerHTML = h + ':' + m + ':' + s;
 }
 
 const watchStart = () => {
