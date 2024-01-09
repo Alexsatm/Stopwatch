@@ -1,5 +1,6 @@
 let [sec, min, hours] = [0, 0, 0];
 let displayTime = document.getElementById('displayTime')
+let timer = null
 
 const stopwatch = () => {
     sec ++;
@@ -12,4 +13,11 @@ const stopwatch = () => {
             hours++
         }
     }
+}
+
+const watchStart = () => {
+    if (timer !== null) {
+        clearInterval(timer)
+    }
+    timer = setInterval(stopwatch,1000);
 }
